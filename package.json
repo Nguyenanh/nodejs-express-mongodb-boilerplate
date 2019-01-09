@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-express-mongodb-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "Nodejs",
+    "Express",
+    "MongoDB",
+    "Mongoose",
+    "RestAPI"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "mongoose": "^5.4.2",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7"
+  }
+}
