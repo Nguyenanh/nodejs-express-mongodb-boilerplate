@@ -4,12 +4,11 @@ const morgan = require('morgan');
 const fs = require('fs');
 const path = require('path');
 // Configuring the database
-const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 // Connecting to the database
-mongoose.connect(dbConfig.url, {
+mongoose.connect('mongodb://localhost:27017/boilerplate', {
   useNewUrlParser: true
 }).then(() => {
   console.log("Successfully connected to the database");
@@ -37,7 +36,7 @@ app.get('/', (req, res) => {
 });
 
 // Require Notes routes
-require('./app/routes/note.routes.js')(app);
+// require('./app/routes/note.routes.js')(app);
 // listen for requests
 app.listen(3000, () => {
   console.log("Server is listening on port 3000");
