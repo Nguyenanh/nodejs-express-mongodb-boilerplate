@@ -1,13 +1,13 @@
-import NoteController from '../controllers/noteController'
+import { NoteController } from '../controllers/noteController/create'
 import { NoteContract } from '../contracts/noteContract/create'
 
 export class NoteRoute {
 
-  public noteController: NoteController = new NoteController()
+  public noteControllerCreate: NoteController = new NoteController.Create()
   public noteContractCreate: NoteContract = new NoteContract.Create()
 
   constructor (router) {
-    router.post('/notes', this.noteContractCreate, this.noteController.create)
+    router.post('/notes', this.noteContractCreate, this.noteControllerCreate.call)
   }
 }
 
