@@ -4,7 +4,7 @@ import * as morgan from 'morgan';
 import * as bodyParser from 'body-parser';
 import * as fs from 'fs'
 import * as expressValidator from 'express-validator'
-import { NoteRoute } from './routes/noteRoute'
+import NoteRoute from './routes/noteRoute'
 
 class App {
   public express

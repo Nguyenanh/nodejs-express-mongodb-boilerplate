@@ -1,12 +1,13 @@
-import { NoteController } from '../controllers/noteController/create'
-import { NoteContract } from '../contracts/noteContract/create'
+import NoteControllerCreate from '../controllers/noteController/create'
+import NoteContractCreate from '../contracts/noteContract/create'
 
-export class NoteRoute {
+export default class NoteRoute {
 
-  public noteControllerCreate: NoteController = new NoteController.Create()
-  public noteContractCreate: NoteContract = new NoteContract.Create()
+  public noteControllerCreate: NoteControllerCreate = new NoteControllerCreate()
+  public noteContractCreate: NoteContractCreate = new NoteContractCreate()
 
   constructor (router) {
+    // Create a new Note
     router.post('/notes', this.noteContractCreate, this.noteControllerCreate.call)
   }
 }
