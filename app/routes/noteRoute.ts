@@ -1,12 +1,16 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const note_controller_1 = require("../controllers/note.controller");
-class NoteRoutes {
-    constructor(router) {
-        router.post('/notes', note_controller_1.default.create.bind(note_controller_1.default));
-    }
+import NoteController from '../controllers/noteController'
+import { NoteContract } from '../contracts/noteContract/create'
+
+export class NoteRoute {
+
+  public noteController: NoteController = new NoteController()
+  public noteContractCreate: NoteContract = new NoteContract.Create()
+
+  constructor (router) {
+    router.post('/notes', this.noteContractCreate, this.noteController.create)
+  }
 }
-exports.default = NoteRoutes;
+
 // module.exports = (app) => {
 //   const notes = require('../controllers/note.controller.js');
 //
@@ -25,4 +29,3 @@ exports.default = NoteRoutes;
 //   // Delete a Note with noteId
 //   app.delete('/notes/:noteId', notes.delete);
 // }
-//# sourceMappingURL=note.routes.js.map

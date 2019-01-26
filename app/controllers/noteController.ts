@@ -1,15 +1,12 @@
-import Note from '../models/note.model'
-class NoteController {
-  constructor() {
-    this.create = this.create.bind(this)
-  }
+import Note from '../models/noteModel'
+import { validationResult } from 'express-validator/check'
+// import BaseController from './baseController'
 
-  create(req, res, next) {
-    // Validate request
-    if(!req.body.content) {
-      return res.status(400).send({
-        message: "Note content can not be empty"
-      });
+export default class NoteController {
+  public create(req, res, next) {
+    var errors = validationResult(req)
+    if (errors) {
+      return res.status(400).json({ errors: errors.array() });
     }
 
     // Create a Note
@@ -30,7 +27,6 @@ class NoteController {
   }
 }
 
-export default new NoteController()
 //
 // const Note = require('../models/note.model.js');
 //

@@ -3,7 +3,8 @@ import * as path from 'path';
 import * as morgan from 'morgan';
 import * as bodyParser from 'body-parser';
 import * as fs from 'fs'
-import noteRoutes from './routes/note.routes'
+import * as expressValidator from 'express-validator'
+import { NoteRoute } from './routes/noteRoute'
 
 class App {
   public express
@@ -27,12 +28,12 @@ class App {
 
     // parse requests of content-type - application/json
     this.express.use(bodyParser.json())
-
+    this.express.use(expressValidator())
   }
 
   private mountRoutes (): void {
     const router = express.Router()
-    new noteRoutes(router)
+    new NoteRoute(router)
 
     router.get('/', (req, res) => {
       res.json({
