@@ -4,10 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
     "tsc": "tsc",
-    "dev": "ts-node-dev --respawn --transpileOnly server.ts",
-    "prod": "tsc && node ./build/server.js"
+    "dev": "ts-node server.ts",
+    "prod": "tsc && NODE_ENV=production node ./build/server.js"
   },
   "keywords": [
     "Nodejs",
@@ -21,14 +20,17 @@
   "dependencies": {
     "@types/express": "^4.16.0",
     "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "express-validator": "^5.3.1",
     "fs": "0.0.1-security",
     "mongoose": "^5.4.2",
     "morgan": "^1.9.1",
-    "path": "^0.12.7",
-    "ts-node-dev": "^1.0.0-pre.32",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "ts-node": "^8.0.2",
     "tsc": "^1.20150623.0",
-    "typescript": "^3.2.2"
+    "typescript": "^3.3.3"
   }
 }

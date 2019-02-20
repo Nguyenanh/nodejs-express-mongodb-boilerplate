@@ -4,13 +4,15 @@ import * as morgan from 'morgan';
 import * as bodyParser from 'body-parser';
 import * as fs from 'fs'
 import * as expressValidator from 'express-validator'
-import NoteRoute from './routes/noteRoute'
+import noteRoute from './routes/noteRoute'
 
 class App {
   public express
+  public logPath
 
   constructor () {
     this.express = express()
+    this.logPath = path.join(__dirname, '../log/' + (process.env.NODE_ENV || 'development') + '.log')
     this.mountMiddleware()
     this.mountRoutes()
   }
@@ -19,7 +21,11 @@ class App {
   private mountMiddleware(): void {
 
     // create a write stream (in append mode)
-    var accessLogStream = fs.createWriteStream(path.join(__dirname, '../log/development.log'), { flags: 'a' });
+    if (!fs.existsSync(this.logPath)) {
+      fs.mkdirSync(path.dirname(this.logPath));
+    }
+
+    var accessLogStream = fs.createWriteStream(this.logPath, { flags: 'a' });
     // setup the logger
     this.express.use(morgan('combined', { stream: accessLogStream }));
 
@@ -33,7 +39,7 @@ class App {
 
   private mountRoutes (): void {
     const router = express.Router()
-    new NoteRoute(router)
+    new noteRoute(router)
 
     router.get('/', (req, res) => {
       res.json({

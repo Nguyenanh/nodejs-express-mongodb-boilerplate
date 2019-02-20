@@ -1,7 +1,10 @@
+import * as dotenv from "dotenv";
+dotenv.config();
+
 class Database {
   public url
   constructor () {
-    this.url = 'mongodb://localhost:27017/boilerplate'
+    this.url = process.env.DATABASE
   }
 }
 export default new Database().url

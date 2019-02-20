@@ -12,6 +12,7 @@ services:
       - /app/log
     links:
       - mongo
+    command: npm run dev
   mongo:
     container_name: mongo
     image: mongo
