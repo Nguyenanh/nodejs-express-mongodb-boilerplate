@@ -4,12 +4,14 @@ import * as morgan from 'morgan';
 import * as bodyParser from 'body-parser';
 import * as fs from 'fs'
 import * as expressValidator from 'express-validator'
+import * as helmet from "helmet"; // Security
 import noteRoute from './api/v1/routes/noteRoute'
 
 class App {
   public express
   public logPath
   private logFormat
+  private helmet
 
   constructor () {
     this.express = express()
@@ -23,6 +25,7 @@ class App {
     // parse requests of content-type - application/x-www-form-urlencoded
     this.express.use(bodyParser.urlencoded({ extended: true }))
 
+    this.express.use(helmet());
     // parse requests of content-type - application/json
     this.express.use(bodyParser.json())
     this.express.use(expressValidator())

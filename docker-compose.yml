@@ -8,7 +8,6 @@ services:
       - "80:3000"
     volumes:
       - .:/app
-      - /app/node_modules
       - /log
     links:
       - mongo
