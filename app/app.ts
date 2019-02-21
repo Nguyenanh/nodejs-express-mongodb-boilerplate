@@ -4,7 +4,7 @@ import * as morgan from 'morgan';
 import * as bodyParser from 'body-parser';
 import * as fs from 'fs'
 import * as expressValidator from 'express-validator'
-import noteRoute from './routes/noteRoute'
+import noteRoute from './api/v1/routes/noteRoute'
 
 class App {
   public express
@@ -29,15 +29,14 @@ class App {
   }
 
   private mountRoutes (): void {
-    const router = express.Router()
-    new noteRoute(router)
-
-    router.get('/', (req, res) => {
-      res.json({
-        message: 'Hello World! Node'
-      })
-    })
-    this.express.use('/', router)
+    const routerV1 = express.Router()
+    new noteRoute(routerV1)
+    this.express.use('/api/v1/', routerV1)
+    this.express.use(function(req, res, next) {
+      res.status(404).send({errors: [{
+        message: "not_found",
+      }]});
+    });
   }
 
   private mountLog(): void {

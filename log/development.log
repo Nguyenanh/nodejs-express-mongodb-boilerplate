@@ -38,3 +38,18 @@ GET / 304 - - 7.691 ms
 ::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 04:18:48 GMT] "POST /notes HTTP/1.1" 400 127 "-" "PostmanRuntime/7.6.0" Parameter {"title":"Anh","content":"im developer"} Response Time 72ms
 ::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 04:19:46 GMT] "POST /notes HTTP/1.1" 400 70 "-" "PostmanRuntime/7.6.0" Parameter {"title":"Anh","content":"im developer"} Response Time 56ms
 ::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 05:10:39 GMT] "GET /notes HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36" Parameter {} Response Time 41ms
+::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 07:54:27 GMT] "GET /notes HTTP/1.1" 404 144 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36" Parameter {} Response Time 7ms
+::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 07:54:34 GMT] "GET /api/v1/notes HTTP/1.1" 200 808 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36" Parameter {} Response Time 60ms
+::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 08:01:25 GMT] "POST /notes HTTP/1.1" 404 145 "-" "PostmanRuntime/7.6.0" Parameter {"title":"Anh","content":"im developer"} Response Time 47ms
+::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 08:04:17 GMT] "POST /notes HTTP/1.1" 404 8 "-" "PostmanRuntime/7.6.0" Parameter {"title":"Anh","content":"im developer"} Response Time 33ms
+::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 08:05:38 GMT] "POST /notes HTTP/1.1" 404 43 "-" "PostmanRuntime/7.6.0" Parameter {"title":"Anh","content":"im developer"} Response Time 44ms
+::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 08:06:22 GMT] "POST /notes HTTP/1.1" 404 54 "-" "PostmanRuntime/7.6.0" Parameter {"title":"Anh","content":"im developer"} Response Time 35ms
+::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 08:07:08 GMT] "POST /notes HTTP/1.1" 404 57 "-" "PostmanRuntime/7.6.0" Parameter {"title":"Anh","content":"im developer"} Response Time 38ms
+::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 08:07:46 GMT] "POST /notes HTTP/1.1" 404 67 "-" "PostmanRuntime/7.6.0" Parameter {"title":"Anh","content":"im developer"} Response Time 36ms
+::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 08:11:16 GMT] "POST /notes HTTP/1.1" 404 145 "-" "PostmanRuntime/7.6.0" Parameter {"title":"Anh","content":"im developer"} Response Time 50ms
+::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 08:11:19 GMT] "POST /notes HTTP/1.1" 404 145 "-" "PostmanRuntime/7.6.0" Parameter {"title":"Anh","content":"im developer"} Response Time 2ms
+::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 08:11:34 GMT] "POST /notes HTTP/1.1" 404 145 "-" "PostmanRuntime/7.6.0" Parameter {"title":"Anh","content":"im developer"} Response Time 38ms
+::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 08:11:56 GMT] "POST /notes HTTP/1.1" 404 145 "-" "PostmanRuntime/7.6.0" Parameter {"title":"Anh","content":"im developer"} Response Time 49ms
+::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 08:11:58 GMT] "POST /notes HTTP/1.1" 404 145 "-" "PostmanRuntime/7.6.0" Parameter {"title":"Anh","content":"im developer"} Response Time 2ms
+::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 08:12:07 GMT] "POST /notes HTTP/1.1" 404 145 "-" "PostmanRuntime/7.6.0" Parameter {"title":"Anh","content":"im developer"} Response Time 1ms
+::ffff:172.29.0.1 - - [Thu, 21 Feb 2019 08:12:25 GMT] "POST /notes HTTP/1.1" 404 36 "-" "PostmanRuntime/7.6.0" Parameter {"title":"Anh","content":"im developer"} Response Time 43ms
