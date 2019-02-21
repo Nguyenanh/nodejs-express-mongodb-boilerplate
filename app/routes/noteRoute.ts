@@ -1,15 +1,19 @@
 import noteControllerCreate from '../controllers/noteController/create'
+import noteControllerIndex from '../controllers/noteController/index'
 import noteContractCreate from '../contracts/noteContract/create'
 
 export default class NoteRoute {
 
   public noteControllerCreate = new noteControllerCreate()
-
+  public noteControllerIndex = new noteControllerIndex()
   public noteContractCreate = new noteContractCreate()
 
   constructor (router) {
     // Create a new Note
     router.post('/notes', this.noteContractCreate, this.noteControllerCreate.call)
+    // Retrieve all Notes
+    router.get('/notes', this.noteControllerIndex.call);
+
   }
 }
 

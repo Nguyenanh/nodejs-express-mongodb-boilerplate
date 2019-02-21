@@ -9,7 +9,7 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
-      - /app/log
+      - /log
     links:
       - mongo
     command: npm run dev

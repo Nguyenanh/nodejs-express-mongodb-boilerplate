@@ -1,14 +1,15 @@
 import Note from '../../models/noteModel'
+import errorContract from '../../contracts/errorContract'
 import { validationResult } from 'express-validator/check'
-// import BaseController from './baseController'
 
 export default class Create {
   constructor() {}
 
   public call(req, res, next) {
-    var errors = validationResult(req)
-    if (errors) {
-      return res.status(400).json({ errors: errors.array() });
+    var errors = validationResult(req).formatWith(errorContract)
+
+    if (!errors.isEmpty()) {
+      return res.status(400).json({errors: errors.array()});
     }
 
     // Create a Note

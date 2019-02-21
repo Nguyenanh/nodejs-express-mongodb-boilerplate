@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "tsc": "tsc",
-    "dev": "ts-node server.ts",
+    "dev": "nodemon -x ts-node server.ts",
     "prod": "tsc && NODE_ENV=production node ./build/server.js"
   },
   "keywords": [
@@ -29,6 +29,7 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
+    "nodemon": "^1.18.10",
     "ts-node": "^8.0.2",
     "tsc": "^1.20150623.0",
     "typescript": "^3.3.3"

@@ -3,6 +3,8 @@ import * as mongoose from 'mongoose'
 import database from './config/Database'
 mongoose.Promise = global.Promise;
 // Connecting to the database
+mongoose.set('debug', true);
+
 mongoose.connect(database, {
   useNewUrlParser: true
 }).then(() => {
